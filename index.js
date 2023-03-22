@@ -266,11 +266,13 @@ Use removeArtist to do the following:
 5. Return the resulting copied array
 🌟 EXAMPLE: if removeArtist is invoked with the artists array and the number 0, it will return the resulting array with Amedeo Modigliani removed from our dataset. */
 
-function removeArtist(artists, number) {
-  delete artists[number];
-    return artists
+function removeArtist(arr, number) {
+  const removed = arr.splice([number]);
+  return removed;
 }
-console.log('task 5', removeArtist(artists, 2));
+
+
+//console.log('task 5', removeArtist(artists, 2));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -295,8 +297,8 @@ function addArtist(artists, name, years, genre, nationality, bio) {
 return artists;
 }
 
-addArtist(artists, "Cera Simoneaux", "02/22/1991 - current day", "Full stack web devoloper", "white", "I'm a single mom working towards a career to support myself and my son.");
-console.log('task 6', artists);
+//addArtist(artists, "Cera Simoneaux", "02/22/1991 - current day", "Full stack web devoloper", "white", "I'm a single mom working towards a career to support myself and my son.");
+//console.log('task 6', artists);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use lotsOfArt to do the following: 
@@ -309,6 +311,7 @@ Use lotsOfArt to do the following:
 function lotsOfArt(arrayArt){
   const artNames = [];
   for(let i = 0; i < arrayArt.length; i++){
+    console.log('test',arrayArt[i]);
     if(arrayArt[i].paintings > 100){
       artNames.push(arrayArt[i].name);
     }

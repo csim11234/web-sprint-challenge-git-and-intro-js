@@ -267,12 +267,11 @@ Use removeArtist to do the following:
 🌟 EXAMPLE: if removeArtist is invoked with the artists array and the number 0, it will return the resulting array with Amedeo Modigliani removed from our dataset. */
 
 function removeArtist(arr, number) {
-  const removed = arr.splice([number]);
+  const removed = arr.splice([number, 1]);
   return removed;
 }
 
-
-//console.log('task 5', removeArtist(artists, 2));
+ console.log('task 5', removeArtist(artists, 2));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -311,7 +310,6 @@ Use lotsOfArt to do the following:
 function lotsOfArt(arrayArt){
   const artNames = [];
   for(let i = 0; i < arrayArt.length; i++){
-    console.log('test',arrayArt[i]);
     if(arrayArt[i].paintings > 100){
       artNames.push(arrayArt[i].name);
     }
@@ -333,15 +331,13 @@ Use artistInfo to do the following:
 */
 
 function artistInfo(arr, filter){
-  const info =[];
   for(let i =0; i < arr.length; i++){
-    if(arr[i].name === filter){
-      info.push(arr[i].bio);
+      if(arr[i].name === filter){
+        return arr[i].bio;
+      }
     }
   }
-  return info;
-}
-console.log('task 8:', artistInfo(artists, "Frida Kahlo"));
+  console.log('task 8:', artistInfo(artists, "Frida Kahlo")); 
 
 
 
@@ -359,7 +355,7 @@ function artistByCountry(arr, filterTerm){
   const country = [];
   for(let i = 0; i < arr.length; i++){
     if(arr[i].nationality === filterTerm){
-      country.push(arr[i]);
+      country.push(arr[i].name);
     }
   }
   return country;
